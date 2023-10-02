@@ -1,3 +1,5 @@
+name: Node.js CI
+
 language: node_js
 node_js:
   - "stable"
@@ -9,3 +11,8 @@ deploy:
   local_dir: build
   on:
     branch: main
+
+cache: npm
+script:
+  - npm cache clean --force
+  - npm install
